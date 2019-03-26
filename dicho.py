@@ -2,20 +2,21 @@ num_lines = sum(1 for line in open('liste_francais.txt', 'r', encoding = "ISO-88
 f = open('liste_francais.txt', 'r', encoding = "ISO-8859-15")
 lines = f.readlines()
 
-wrd.lower() = input('> ')
+wrd = input('> ')
+wrd = wrd.lower()
 p = int(num_lines / 2)
 min0 = 0
 max0 = num_lines
 w = 0
 i = 0
 
-if wrd + '\n' not in lines:
+if wrd + '\n' not in lines and wrd not in lines:
 	print('Mot non reconnu !')
 	exit()
 
 while w == 0:
 	i += 1
-	if lines[p] == wrd + '\n':
+	if lines[p] == wrd + '\n' or lines[p] == wrd:
 		w = 1
 	elif lines[p] > wrd + '\n':
 		max0 = p
